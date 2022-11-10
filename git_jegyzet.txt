@@ -1,0 +1,93 @@
+Git lépések:
+
+-Hozzunk létre egy könyvtárat a projektnek. -> lépjünk bele a TC-vel a code . paraccsal. /VSC megnyílik a mappában/
+
+-Hozzuk létre a fájlt vagy másoljuk ide amivel dolgozunk. /pl. index.html, style.css, data.txt stb./
+
+-Nyissunk egy terminált a VSC-ben.
+
+-A terminálban adjuk ki a git init parancsot. /létrejön egy rejtett fájl - .git néven/
+
+-Adjuk ki a git add index.html parancsot, ha több fájl van akkor mindre egyesével vagy git add * 
+    (ez mindent hozzáad a stage-hez ami a mappában van) /értelemszerűen ha nem index.html akkor azt írjuk helyette :)/
+
+-Adjuk ki a git commit -m "Első commit vagy amit akarsz :)" parancsot.
+
+-Ezek csak akkor kellenek ha távoli repository-t akarunk. Ha csak a saját gépen csináljuk akkor ez nem kell.
+    -Jelentkezzünk be a github.com-on az accountunkkal és készítsünk egy új repository-t. /create new repository/
+
+    -Megjelenik egy git parancsokból álló kódrészlet.
+
+    -Innen a git branch... -al kezdődő soroktól egyesével másoljuk be  a terminálba.
+
+-Kész a git-ünk. 
+
+-Ahogy haladunk előre a projekttel és úgy gondoljuk hogy mentenünk kellene, akkor újra kiadjuk a módosított fájlra a git add parancsot, 
+    commitoljuk és a git push paranccsal feltöltjük a távoli repora.
+
+
+-Weboldal publikálása github-on keresztül.
+    -Ha távoli repo-t használunk és fel-push-oltuk a fájljainkat, akkor katt. a settings-re a github weboldalán a reponknál.
+    -A baloldali függőleges menűsor végén van egy opció hogy pages -> katt. rá.
+    -Középtájon a branch-nál a none-t átállítjuk main-ra /vagy ha más branch nevet adtunk meg akkor arra/ és save.
+    -Megjelenik egy link /van amikor több perc is eltelik/ amit a böngészőbe másolva megnyílik az oldalunk.
+
+-Nagy vonalakban ennyi. :)
+
+
+GIT
+fogalmak
+repository – raktár, könyvtár. itt tárolódik a munkánk, tárol, rendszerez, hozzáférést biztosít
+
+git - - version		aktuális verzió
+
+kezdés	vscode ->terminal
+
+parancsok
+
+cls		törli a terminál ablakát
+
+mkdir mappanév	/ létrehozza a project mappáját. csak akkor, ha még nincs létrehozva a mappa amiben a project van /
+cd mappanév	/ belép a project mappájába – munka mappa /
+ls		kilistázza a projekt mappában levő mappákat és fájlokat
+git init		létrehoz egy helyi üres repot / .git /
+git status	a reporól ad vissza infót, pl ha bekerül új fájl akkor jelzi
+git add	file	hozzáadja a színpadhoz /amíg nem commitoljuk addig itt van / a file-t, ha beírjuk az első karaktert majd TAB akkor kiegészíti		több fájlt is adhatok hozzá így, nem rakja még a repoba, amíg nem coomitolom
+git commit -m	elküldi a repoba a fájlt / -m -> message /
+git add mappa/*	a mappában levő fájlokat küldi
+git add *.txt	az összes txt kiterjesztésű fájlt a színpadra küldi
+git add .	 az összes fájlt hozzáadja
+git log		kilistázza az eddigi commitokat
+git log –oneline		ua. csak egy sorban
+git remote add origin url	távoli repohoz csatlakozás
+git push -u origin master	a távoli repoba küldi a helyi repot, ha az -u -t megadjuk akkor legközelebb elég csak a git push -t kiadni
+git config –global user.email „email@cim”	a távoli repohoz az email cím beállítása, --global helyett –local akkor a helyi gépen
+git config –global user.name „nev”		ezen a néven jelennek meg a repoid
+kijelentkezéskor: git config --global – unset user.name „név”
+   git config --global –unset user.email „email”
+
+git pull origin master		lekéri a távoli repot
+git pull origin master - -allow-unreleated-histories	ha nem akar pullolni akkor használjuk
+git clone url	ha már van távoli repo de nincs localis
+Ha már valaki PUSHolt a remote repo felé, akkor a többieknek muszály PULLolnia mielőtt PUSHolni tudna!
+git diff HEAD	megmutatja hogy az utolsó commitunk óta milyen fájlok változtak a remote repon
+git diff fájlnév	az adott fájl változásait mutatja
+git diff - -staged	a színpadon /stage/ levő fájlokról is megmutatja a változásokat
+git reset fájlnév	leveszi a színpadról a fájlt
+git checkout - -fájlnév	visszaállítja fájt a módosítás előttire, ne használjuk 😊
+git checkout XXXX	a commit első négy karaktere, visszaállítja a verzióra
+git branch branch_neve	új branch létrehozása
+git branch		megmutatja melyik branchba vagyunk
+git checkout branch_neve	átvált a branch_neve branchra
+git rm „*txt”		törli az összes .txt-t csak abból a branchból ahol vagyunk
+git merge branch_neve		összefésüli az adott branchet a branch_neve branchhel
+git branch -d branch_neve	törli a branchet
+gitk		grafikus felület
+git reflog	kiírja az eddigi kommitokat
+
+
+https://www.brainextension.hu/2014/08/22/ujabb-git-parancssori-okossagok-addrmresetlog/
+https://www.youtube.com/playlist?list=PLyriihBWoulw1KQ2aM-NMnAoVPZevfmZq
+
+
+
